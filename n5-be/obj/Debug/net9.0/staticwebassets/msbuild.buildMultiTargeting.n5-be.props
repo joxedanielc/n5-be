@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/n5-be.props" />
+</Project>
