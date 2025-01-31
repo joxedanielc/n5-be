@@ -11,7 +11,9 @@ namespace N5_BE.Domain.Entities
         public required string NombreEmpleado { get; set; }
         public required string ApellidoEmpleado { get; set; }
         public int TipoPermiso { get; set; }
-        public TipoPermisos? TipoPermisos { get; set; }
         public DateTime FechaPermiso { get; set; }
+        public TipoPermisos? TipoPermisos { get; set; }
+        [NotMapped]
+        public string? TipoPermisoDescripcion { get; set; }
     }
 }

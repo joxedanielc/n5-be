@@ -9,5 +9,6 @@ namespace N5_BE.Domain.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public required string Descripcion { get; set; }
+        public ICollection<Permiso> Permisos { get; set; } = new List<Permiso>();
     }
 }
