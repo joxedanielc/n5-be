@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using N5_BE.Application.Features.Permisos.Commands.ModifyPermission;
 using N5_BE.Application.Features.Permisos.Commands.RequestPermission;
 using N5_BE.Application.Features.Permisos.Queries.GetPermissions;
+using N5_BE.Application.Features.Permisos.Queries.GetPermissionTypes;
 using N5_BE.Application.Interfaces;
 using N5_BE.Infra.Data;
 using N5_BE.Infra.Elastic;
@@ -42,6 +43,7 @@ builder.Services.AddScoped<IElasticService, ElasticService>();
 builder.Services.AddScoped<RequestPermissionCommandHandler>();
 builder.Services.AddScoped<ModifyPermissionCommandHandler>();
 builder.Services.AddScoped<GetPermissionsQueryHandler>();
+builder.Services.AddScoped<GetPermissionTypesQueryHandler>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));

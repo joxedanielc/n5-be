@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using N5_BE.Application.Features.Permisos.Commands.RequestPermission;
 using N5_BE.Application.Features.Permisos.Commands.ModifyPermission;
 using N5_BE.Application.Features.Permisos.Queries.GetPermissions;
+using N5_BE.Application.Features.Permisos.Queries.GetPermissionTypes;
 
 namespace N5_BE.WebApi.Controllers
 {
@@ -12,15 +13,18 @@ namespace N5_BE.WebApi.Controllers
         private readonly RequestPermissionCommandHandler _requestHandler;
         private readonly ModifyPermissionCommandHandler _modifyHandler;
         private readonly GetPermissionsQueryHandler _getHandler;
+        private readonly GetPermissionTypesQueryHandler _getPermissionTypeHandler;
 
         public PermisosController(
             RequestPermissionCommandHandler requestHandler,
             ModifyPermissionCommandHandler modifyHandler,
-            GetPermissionsQueryHandler getHandler)
+            GetPermissionsQueryHandler getHandler,
+            GetPermissionTypesQueryHandler getPermissionTypeHandler)
         {
             _requestHandler = requestHandler;
             _modifyHandler = modifyHandler;
             _getHandler = getHandler;
+            _getPermissionTypeHandler = getPermissionTypeHandler;
         }
 
         [HttpPost("request")]
@@ -44,6 +48,13 @@ namespace N5_BE.WebApi.Controllers
         {
             var permissions = await _getHandler.Handle(new GetPermissionsQuery());
             return Ok(permissions);
+        }
+
+        [HttpGet("permissionTypes")]
+        public async Task<IActionResult> GetPermissionTypes()
+        {
+            var permissionTypes = await _getPermissionTypeHandler.Handle(new GetPermissionTypesQuery());
+            return Ok(permissionTypes);
         }
     }
 }
