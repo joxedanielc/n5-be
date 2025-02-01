@@ -14,7 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 var dbHost = builder.Configuration["Database:Host"] ?? "localhost";
 var dbPort = builder.Configuration["Database:Port"] ?? "3306";
 var dbUser = builder.Configuration["Database:User"] ?? "root";
-var dbPass = builder.Configuration["Database:Password"] ?? "12345678";
+var dbPass = builder.Configuration["Database:Password"] ?? "root";
 var dbName = builder.Configuration["Database:Name"] ?? "N5_DB";
 
 var connectionString =

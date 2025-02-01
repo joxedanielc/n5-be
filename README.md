@@ -1,4 +1,4 @@
-# **N5 Backend - Permission Management API**
+# **N5 Backend for Permission Management API**
 
 The **N5 Backend API** is a **.NET Core Web API** designed to manage user permissions efficiently. This system enables users to **request, update, and retrieve permissions** while integrating **Elasticsearch** for real-time logging and indexing of permission data.
 
@@ -54,9 +54,13 @@ By default, the API is hosted at **`http://localhost:5155`**.
 To configure the database connection, update the **`appsettings.Development.json`** file with the appropriate credentials:
 
 ```json
-"ConnectionStrings": {
-  "DefaultConnection": "Server=localhost;Database=N5_DB;User Id=sa;Password=yourpassword;"
-}
+"Database": {
+    "Host": "",
+    "Port": "",
+    "User": "",
+    "Password": "",
+    "Name": "N5_DB"
+  }
 ```
 
 Apply database migrations and update the schema by running:
