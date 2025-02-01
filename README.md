@@ -23,6 +23,10 @@ To run this application, ensure that you have the following dependencies install
    ```bash
    dotnet restore
    ```
+3. Create database with name:
+   ```bash
+   N5_DB
+   ```
 
 ## **▶ Running the API**
 
@@ -110,7 +114,7 @@ This API follows a structured architecture and is built using:
 
 - **.NET Core 9** – Backend framework
 - **Entity Framework Core** – ORM for database management
-- **SQL Server** – Primary relational database
+- **MySQL** – Primary relational database
 - **Elasticsearch** – Real-time indexing and search capabilities
 - **CQRS & Repository Pattern** – Best practices for clean, scalable architecture
 
